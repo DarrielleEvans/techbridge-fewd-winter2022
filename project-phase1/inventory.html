@@ -1,29 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Book Inventory</title>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Inventory</title>
 
-    <style>
-
-      body{
-        background: lightblue;
+  <style>
+      html, body{
+        display:flex;
+        flex-direction: column;
+        height:100vh;
+        margin:0;
       }
+      .header{
+        display:flex;
+        background-color: #D1D2D5;
+        color:black;
+        text-align: end;
+        height: 45px;
+        align-items: center;
+        flex-direction: row-reverse;
+        padding-right:5px;
+      }
+
       .title{
-        text-align: center;
+            display:flex;
+            flex-direction: row;
+            justify-content: space-around;
+            
+        }
+      
+      .directions{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+
       }
 
+      
+      .main{
+            display:flex;
+            flex-direction: column;
+            justify-content:flex-start;
+            padding:60px;
+            background-color: #3377FF;
+            height: 700px; 
+        }
+
+        img{
+            width:300px;
+            height:auto;
+        }
+
+      .footer{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            background-color:#D1D2D5;
+            color: black;
+            text-align: center;
+            height: 50px;
+        }
 
 
-    </style>
-  </head>
-  <body>
-    <div class="title"><h1> Book Inventory</h1><br> </div>
-    <p>Please use this page to update or add information for books. If you need to delete a book please contact a manager.</p>
-    <p>Select the information you are updating or adding. Enter the information in box below.</p>
+  </style>
+</head>
+<body>
+    <div class="header"><h1>Rare Vintage Bookstore</h1></div>
+    <div class="main">
+        <div class="title"><h1> Book Inventory</h1></div>
+        <div class="directions">
+        <p>Please use this page to update or add information for books. If you need to delete a book please contact a manager.</p>
+        <p>Select the information you are updating or adding. Enter the information in box below.</p>
     <form>
         <select id="Bookinfo" name="Bookinfo">
           <option value="Author">Price</option>
@@ -33,9 +82,11 @@
           <option value="Quantity">Quantity</option>
         <input type="text" id="value" name="value"><br>
         <input type="submit">
-
     </form>
-      
-   </body>
+    </div>
 
+    <div class="pic"><img src="/images/book1.jpg"></div>
+    </div>
+    <div class="footer">Copyright © Rare Vintage Bookstore</div>
+</body>
 </html>

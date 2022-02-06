@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Manager Login</title>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manager Portal</title>
 
-    <style>
-        html, body {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            margin:0;   
-        } 
-
+  <style>
+      html, body{
+        display:flex;
+        flex-direction: column;
+        height:100vh;
+        margin:0;
+      }
+      .header{
+        display:flex;
+        background-color: #D1D2D5;
+        color:black;
+        text-align: end;
+        height: 45px;
+        align-items: center;
+        flex-direction: row-reverse;
+        padding-right:5px;
+      }
       
-       .header{
-            display:flex;
-            background-color: #D1D2D5;;
-            color: black;
-            text-align: end;
-            height: 45px;  
-            align-items:center;
-            flex-direction: row-reverse;
-            padding-right: 5px;  
-        } 
-
-        .main{
+      .main{
             display:flex;
             flex-direction: column;
             justify-content:flex-start;
@@ -37,10 +34,10 @@
         }
 
         .title{
-            display:flex;
-            flex-direction: row;
-            justify-content: space-around;
-            font-size: 30px;
+           display: flex;
+           flex-direction: row;
+           justify-content: center;
+           /*font-size:30px;   ask why this throws the whole page off*/
         }
 
         .directions{
@@ -49,23 +46,11 @@
             justify-content: space-around;
             font-size: 20px;
         }
-
         .entry{
             display:flex;
             flex-direction: column;
             align-items: center;
             font-size: 20px;
-        }
-        
-
-        .footer{
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            background-color:#D1D2D5;;
-            color: black;
-            text-align: center;
-            height: 50px;
         }
 
         img{
@@ -73,32 +58,37 @@
             height:auto;
         }
 
+      .footer{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            background-color:#D1D2D5;
+            color: black;
+            text-align: center;
+            height: 50px;
+        }
 
 
-    </style>
-  </head>
-  <body>
-    
-    <div class="header"><h1> Rare Vintage Bookstore</h1></div>
+  </style>
+</head>
+<body>
+    <div class="header"><h1>Rare Vintage Bookstore</h1></div>
     <div class="main">
-            <div class="title"><h2> Manger Portal</h2></div>
-            <div class="directions"><p>Please enter your username and password below.</p></div>
-            <div class="entry">
-                <form>
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username"><br>
-                    <label for="password">Password:</label>
-                    <input type="text" id="password" name="password"><br>
-        
-                </form>
-                <a href="forgotpassword.html">Forgot Password</a>
-                <form><input type="submit"></form>
-            </div>
-            <div class="pic"><img src="/images/book1.jpg"></div>
+        <div class="title"><h1> Manger Portal</h1></div>
+        <div class="directions"><p>Please enter your username and password below.</p></div>
+        <div class="entry">
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username"><br>
+                <label for="password">Password:</label>
+                <input type="text" id="password" name="password"><br>
+            </form>
+            <a href="forgotpassword.html">Forgot Password</a>
+            <form><input type="submit"></form>
         </div>
 
+    <div class="pic"><img src="/images/book1.jpg"></div>
+    </div>
     <div class="footer">Copyright © Rare Vintage Bookstore</div>
-    
-   </body>
-
+</body>
 </html>
