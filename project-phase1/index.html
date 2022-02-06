@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Index</title>
+  <title>Employee Sign Up</title>
 
   <style>
       html, body{
@@ -45,7 +45,7 @@
             background-color:#D1D2D5;
             color: black;
             text-align: center;
-            height: 50px;
+            min-height: 50px;
         }
 
 
@@ -54,6 +54,26 @@
 <body>
     <div class="header"><h1>Rare Vintage Bookstore</h1></div>
     <div class="main">
+      <div class="title"><h1>Employee Enrollment</h1></div>
+      <div class="entry">
+        <form>
+          <label for"fname">First name:</label><br>
+          <input type="text" id="fname" name="fname"><br>
+          <label for"lname">Last name:</label><br>
+          <input type="text" id="lname" name="lname"><br>
+          <label for"username"> Username:</label><br>
+          <input type="text" id="username" name="username"><br>
+          <label for"temppassword"> Temporary Password:</label><br>
+          <input type="text" id="temppassword" name="temppassword"><br>
+          <label for"Role">Choose a role from the menu:</label><br>
+          <select id="Role" name="Role">
+            <option value="Owner">Owner</option>
+            <option value="Manager">Manager</option>
+            <option value="Associate">Associate</option><br>
+          <input type="submit">
+        </form>
+      </div>
+
     <div class="pic"><img src="/images/book1.jpg"></div>
     </div>
     <div class="footer">Copyright © Rare Vintage Bookstore</div>
