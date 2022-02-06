@@ -7,65 +7,74 @@
   <title>Associate Login</title>
 
   <style>
-      html, body{
-        display:flex;
-        flex-direction: column;
-        height:100vh;
-        margin:0;
-      }
-      .header{
-        display:flex;
-        background-color: #D1D2D5;
-        color:black;
-        text-align: end;
-        height: 45px;
-        align-items: center;
-        flex-direction: row-reverse;
-        padding-right:5px;
-      }
+    html,body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin:0;   
+        } 
+    
+        .header{
+            display:flex;
+            background-color: #D1D2D5;
+            color: black;
+            text-align: end;
+            height: 45px;  
+            align-items:center;
+            flex-direction: row-reverse;
+            padding-right: 5px;
+            
+        }
 
-      .title{
-           display: flex;
-           flex-direction: row;
-           justify-content: center;
-      }
-      
-      .entry{
+        .title{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-around;
+            
+        }
+
+        .directions{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-around;
+            font-size: 20px;
+        }
+
+        .entry{
             display:flex;
             flex-direction: column;
             align-items: center;
             font-size: 20px;
         }
-      .main{
+
+
+
+        .main{
             display:flex;
             flex-direction: column;
             justify-content:flex-start;
             padding:60px;
             background-color: #3377FF;
             height: 700px; 
+
         }
 
         img{
             width:300px;
             height:auto;
         }
-
-        .entry{
-            display:flex;
-            flex-direction: row;
-            align-items: center;
-            font-size: 20px;
-        }
-
-      .footer{
+        .footer{
             display:flex;
             justify-content: center;
             align-items: center;
             background-color:#D1D2D5;
             color: black;
             text-align: center;
-            height: 50px;
+            min-height: 50px;
+
         }
+
+
 
 
   </style>
@@ -73,20 +82,27 @@
 <body>
     <div class="header"><h1>Rare Vintage Bookstore</h1></div>
     <div class="main">
-
-      <div class="title"><h1> Associate Portal</h1></div>
-        <div class="entry"><p>Please enter your username and password below.</p>
-            <form>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username"><br>
-                <label for="password">Password:</label>
-                <input type="text" id="password" name="password"><br>
-            </form>
-            <a href="forgotpassword.html">Forgot Password</a>
-            <form><input type="submit"></form>
-        </div>
-      <div class="pic"><img src="/images/book1.jpg"></div>
+      <div class="title"><h1> Associate Login</h1></div>
+      <div class="directions"><p>Please enter your username and password below.</p></div>
+      <div class="entry">
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password"><br>
+        </form>
+        <a href="forgotpassword.html">Forgot Password</a>
+        <form><input type="submit"></form>
     </div>
+
+    <div class="pic"><img src="/images/book1.jpg"></div>
+
+    </div>
+
     <div class="footer">Copyright © Rare Vintage Bookstore</div>
+
+
+
+  
 </body>
 </html>
