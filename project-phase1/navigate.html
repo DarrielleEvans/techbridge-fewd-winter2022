@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employee Signup</title>
+
+
+  <style>
+    html, body{
+      display:flex;
+      flex-direction: column;
+      height:100vh;
+      margin:0;
+    }
+    .header{
+      display:flex;
+      background-color: white;
+      color:black;
+      text-align: end;
+      height: 55px;
+      align-items: center;
+      flex-direction: row-reverse;
+      padding-right:5px;
+    }
+
+    .title{
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+    }
+
+    .entry{
+      display:flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    
+    .main{
+          display:flex;
+          flex-direction: column;
+          justify-content:flex-start;
+          padding:60px;
+          background-color: #3377FF;
+          height: 700px; 
+      }
+
+      img{
+          width:300px;
+          height:auto;
+      }
+
+    .footer{
+          display:flex;
+          justify-content: center;
+          align-items: center;
+          background-color:#D1D2D5;
+          color: black;
+          text-align: center;
+          min-height: 50px;
+      }
+
+
+</style>
+
+
+</head>
+
+
+  <body>
+      <h1> Employee Signup</h1>
+      <form>
+        <label for"fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for"lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+        <label for"username"> Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for"temppassword"> Temporary Password:</label><br>
+        <input type="text" id="temppassword" name="temppassword"><br>
+        <label for"Role">Choose a role from the menu:</label><br>
+        <select id="Role" name="Role">
+          <option value="Owner">Owner</option>
+          <option value="Manager">Manager</option>
+          <option value="Associate">Associate</option><br>
+        <input type="submit">
+      </form>
+  </body>
+</html>
