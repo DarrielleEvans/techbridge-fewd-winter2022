@@ -21,9 +21,16 @@
             text-align: end;
             height: 55px;  
             align-items:center;
-            flex-direction: row-reverse;
-            padding-right: 5px;
+            flex-direction: row;
+            padding-right: 15px;
+            justify-content: space-between;
+            font-size: 10px;
             
+        }
+
+        .logo{
+            width: 100px;
+            height: auto;
         }
 
         .title{
@@ -31,6 +38,15 @@
             flex-direction: row;
             justify-content: space-around;
             
+        }
+        .fixedbgd{
+            background-image: url("./images/istock.jpg"); /*image url for background*/
+            min-height: 500px; /*set the height for the background*/
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
         }
 
         .directions{
@@ -55,7 +71,8 @@
             justify-content:flex-start;
             padding:60px;
             background-color: #3377FF;
-            height: 700px; 
+            height: 400px; 
+            color: white;
 
         }
 
@@ -63,16 +80,32 @@
             width:300px;
             height:auto;
         }
-        .footer{
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            background-color:#D1D2D5;
-            color: black;
-            text-align: center;
-            min-height: 50px;
 
+        .container {
+        display: inline-block;
+        cursor: pointer;
         }
+
+        .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+        }
+
+        .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+        }
+
+        .change .bar2 {opacity: 0;}
+
+        .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+        }
+
 
 
 
@@ -80,7 +113,16 @@
   </style>
 </head>
 <body>
-    <div class="header"><h1>Rare Vintage Bookstore</h1></div>
+    <div class="header">
+        <img src="images/logo.png" class="logo">
+        <div class="container" onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        </div>
+
+    </div>
+    <div class="fixedbgd"></div>
     <div class="main">
       <div class="title"><h1> Associate Login</h1></div>
       <div class="directions"><p>Please enter your username and password below.</p></div>
@@ -95,11 +137,11 @@
         <form><input type="submit"></form>
     </div>
 
-    <div class="pic"><img src="/images/book1.jpg"></div>
+    <div class="pic"><img src="./images/book2.jpg"></div>
 
     </div>
 
-    <div class="footer">Copyright © Rare Vintage Bookstore</div>
+  
 
 
 

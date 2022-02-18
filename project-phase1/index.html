@@ -24,17 +24,25 @@
             height: 55px;  
             align-items:center;
             flex-direction: row;
-            padding-right: 5px;
+            padding-right: 15px;
             justify-content: space-between;
+            font-size: 10px;
             
+        }
+
+
+        .logo{
+            width: 100px;
+            height: auto;
         }
         .main{
             display:flex;
             flex-direction: column;
             justify-content:flex-start;
             padding:60px;
-            background-color: #3377FF;
-            height: 700px; 
+            background-color: blue;
+            height: 400px; 
+            color: white;
            
         }
         
@@ -46,20 +54,25 @@
         }
 
         button {
-                 padding: 8px 16px;
-                 border-radius: 8px;
-                 margin-top:8px;
-                 font-weight: bold;
+            background-color: white;
+            border: none;
+            color: black;
+            padding: 12px 16px;
+            font-size: 16px;
+            cursor: pointer;
                  
         }
 
-        .middle{
-            display: flex;
-            flex-direction: row;
-            height:400px;
-            
-            background-image:  url("./images/istock.jpg");
+        .fixedbgd{
+            background-image: url("./images/istock.jpg"); /*image url for background*/
+            min-height: 500px; /*set the height for the background*/
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
         }
+            
 
 
         .directions{
@@ -80,16 +93,7 @@
             width:300px;
             height:auto;
         }
-
-        .footer{
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            background-color:#D1D2D5;
-            color: black;
-            text-align: center;
-            min-height: 50px;
-        }
+        
 
         .container {
         display: inline-block;
@@ -119,7 +123,8 @@
 </head>
 <body>
    
-        <div class="header"><h1> Rare Vintage Bookstore</h1>
+        <div class="header">
+            <img src="images/logo.png" class="logo">
             <div class="container" onclick="myFunction(this)">
             <div class="bar1"></div>
             <div class="bar2"></div>
@@ -128,9 +133,7 @@
 
         </div>
 
-        <div class="middle"> 
-            <div class="pic"><img src="/images/book1.jpg"></div>
-        </div>
+        <div class="fixedbgd"></div>
        
         <div class="main">
 
@@ -145,12 +148,12 @@
                       
                   </div>
 
-            <div class="pic"><img src="/images/book1.jpg"></div>
+            <div class="pic"><img src="./images/book2.jpg"></div>
          </div>
 
         
             
-    <div class="footer">Copyright © Rare Vintage Bookstore</div>
+   
 
     <script>
         function myFunction(x) {
