@@ -14,20 +14,38 @@
         margin:0;
       }
       .header{
-        display:flex;
-        background-color: white;
-        color:black;
-        text-align: end;
-        height: 55px;
-        align-items: center;
-        flex-direction: row-reverse;
-        padding-right:5px;
-      }
+            display:flex;
+            background-color: white;
+            color: black;
+            text-align: end;
+            height: 55px;  
+            align-items:center;
+            flex-direction: row;
+            padding-right: 15px;
+            justify-content: space-between;
+            font-size: 10px;
+            
+        }
+
+        .logo{
+            width: 100px;
+            height: auto;
+        }
+
       .title{
            display: flex;
            flex-direction: row;
            justify-content: center;
       }
+      .fixedbgd{
+            background-image: url("./images/jumbobooks.jpg"); /*image url for background*/
+            min-height: 500px; /*set the height for the background*/
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat; 
+            background-size: cover;
+
+        }
 
       .entry{
         display:flex;
@@ -42,13 +60,55 @@
             flex-direction: column;
             justify-content:flex-start;
             padding:60px;
-            background-color: #3377FF;
-            height: 700px; 
+            background-color: white;
+            height: 400px; 
         }
 
         img{
             width:300px;
             height:auto;
+        }
+
+        .container {
+        display: inline-block;
+        cursor: pointer;
+        }
+
+        .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+        }
+
+        .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+        }
+
+        .change .bar2 {opacity: 0;}
+
+        .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+        }
+
+        /* Page content */
+        .content {
+        padding: 16px;
+        }
+
+        /* The sticky class is added to the header with JS when it reaches its scroll position */
+        .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%
+        }
+
+        /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+        .sticky + .content {
+        padding-top: 102px;
         }
 
 
@@ -57,7 +117,17 @@
   </style>
 </head>
 <body>
-    <div class="header"><h1>Rare Vintage Bookstore</h1></div>
+    <div class="header" id="myHeader">
+      <img src="images/logo.png" class="logo">
+      <div class="container" onclick="myFunction(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+      </div>
+    </div>
+
+    <div class="fixedbgd"></div>
+
     <div class="main">
         <div class="title"><h1>Employee Enrollment</h1></div>
         <div class="entry">
@@ -81,6 +151,31 @@
         </div>
     <div class="pic"><img src="/images/book1.jpg"></div>
     </div>
+
+    <script>
+      //changes the menu bar to an X
+      function myFunction(x) {
+        x.classList.toggle("change");
+      }
+
+      // When the user scrolls the page, execute myFunction 
+      window.onscroll = function() {headerFunction()};
+
+      // Get the header
+      var header = document.getElementById("myHeader");
+
+      // Get the offset position of the navbar
+      var sticky = header.offsetTop;
+
+      // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+      function headerFunction() {
+      if (window.pageYOffset > sticky) {
+          header.classList.add("sticky");
+      } else {
+          header.classList.remove("sticky"); 
+      }
+      }
+   </script>
    
 </body>
 </html>
