@@ -112,20 +112,35 @@ function findInList() {
  }
  
 
-
+//function that sorts the list
 function sortIt() {
-    //
-  
-      let allSpans = document.getElementsByTagName('span');
+    //assigns the id to rowAll
+    let rowAll=document.getElementById('row0');
+      let allColumns = document.getElementsByClassName('column');
        let arrayNumbers = [];
-
-       for (let i = 0; i < allSpans.length; i++) {
-         arrayNumbers.push(allSpans[i].innerHTML);
+       
+    //use a for loop to push the list in an array
+       for (let i = 0; i < allColumns.length; i++) {
+         arrayNumbers.push(allColumns[i]);
          console.log("Array:", arrayNumbers);
-}
-            allSpans=arrayNumbers.sort(function(a, b){return a - b});     
+}   
+    //sort the array from lowest to high
+           arrayNumbers.sort((a, b)=>{
+                a=a.getElementsByTagName('span')[0].innerHTML;
+                b=b.getElementsByTagName('span')[0].innerHTML;
+            
+           
+               return a - b});
+    //uses the for each method to organize the list of each array index
+               arrayNumbers.forEach(swap);
+               function swap (container){
+                   rowAll.appendChild(container);
+               }
+               
+
+               
+
     
-            console.log("Array2:", arrayNumbers);
     
     
     }
