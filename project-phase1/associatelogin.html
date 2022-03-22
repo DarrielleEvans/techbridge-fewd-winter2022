@@ -1,190 +1,194 @@
-<!DOCTYPE html>
+
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Associate Login</title>
-
-  <style>
-    html,body {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            margin:0;   
-        } 
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book store</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
-        .header{
-            display:flex;
-            background-color: white;
-            color: black;
-            text-align: end;
-            height: 55px;  
-            align-items:center;
-            flex-direction: row;
-            padding-right: 15px;
-            justify-content: space-between;
-            font-size: 10px;
-            
-        }
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <style>
+    
+    
+            .bg-image{
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .container{
+                height: 400px;
+            }
+    
+    
+            button {
+                background-color: lightgray;
+                border: none;
+                color: white;
+                padding: 12px 16px;
+                font-size: 16px;
+                cursor: pointer;      
+            }
+    
+    
+            .bar1, .bar2, .bar3 {
+                width: 35px;
+                height: 5px;
+                background-color: #333;
+                margin: 6px 0;
+                transition: 0.4s;
+            }
+    
+            .change .bar1 {
+                 -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+                transform: rotate(-45deg) translate(-9px, 6px);
+            }
+    
+            .change .bar2 {opacity: 0;}
+    
+            .change .bar3 {
+                -webkit-transform: rotate(45deg) translate(-8px, -8px);
+                transform: rotate(45deg) translate(-8px, -8px);
+            }
+            .navbar{
+                display: flex;
+                justify-content: space-between;
+            }
 
-        .logo{
-            width: 100px;
-            height: auto;
-        }
+            .main{
+                display:flex;
+                flex-direction: column;
+                justify-content:flex-start;
+                padding:60px;
+                background-color: white;
+                height: 400px;     
+            }
 
-        .title{
-            display:flex;
-            flex-direction: row;
-            justify-content: space-around;
-            
-        }
-        .fixedbgd{
-            background-image: url("./images/jumbobooks.jpg"); /*image url for background*/
-            min-height: 500px; /*set the height for the background*/
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            form {border: 3px solid #f1f1f1; 
+                border-radius: 25px; 
+                height: auto; 
+                width:400px;
+            }
 
-        }
+            input[type=text], input[type=password] {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+                border-radius: 25px;
+            }
 
-        .directions{
-            display:flex;
-            flex-direction: row;
-            justify-content: space-around;
-            font-size: 20px;
-        }
+            button {
+                background-color:gray;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+            }
 
-        .entry{
-            display:flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 20px;
-        }
+            button:hover {
+                opacity: 0.8;
+            }
 
+            .Registerbtn {
+                width: auto;
+                padding: 10px 18px;
+                background-color: Black;
+            }
 
+            .logincontainer {
+                padding: 16px;
+            }
 
-        .main{
-            display:flex;
-            flex-direction: column;
-            justify-content:flex-start;
-            padding:60px;
-            background-color: white;
-            height: 400px; 
-            color: black;
+            span.psw {
+                float: right;
+                padding-top: 16px;
+            }
+            .cancelbtn {
+                width: 100%;
+            }
 
-        }
-
-        img{
-            width:300px;
-            height:auto;
-        }
-
-        .container {
-        display: inline-block;
-        cursor: pointer;
-        }
-
-        .bar1, .bar2, .bar3 {
-        width: 35px;
-        height: 5px;
-        background-color: #333;
-        margin: 6px 0;
-        transition: 0.4s;
-        }
-
-        .change .bar1 {
-        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-        transform: rotate(-45deg) translate(-9px, 6px);
-        }
-
-        .change .bar2 {opacity: 0;}
-
-        .change .bar3 {
-        -webkit-transform: rotate(45deg) translate(-8px, -8px);
-        transform: rotate(45deg) translate(-8px, -8px);
-        }
-
-
-        /* Page content */
-        .content {
-        padding: 16px;
-        }
-
-        /* The sticky class is added to the header with JS when it reaches its scroll position */
-        .sticky {
-        position: fixed;
-        top: 0;
-        width: 100%
-        }
-
-        /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-        .sticky + .content {
-        padding-top: 102px;
-        }
-
-
-
-  </style>
-</head>
-<body>
-    <div class="header" id="myHeader">
-        <img src="images/logo.png" class="logo">
-        <div class="container" onclick="myFunction(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
+            .size{
+                display:flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            .login{
+                display: flex;
+                justify-content: center;
+            }
+    
+    
+        </style>
+    
+    
+    
+    </head>
+    <body>
+        <!--navbar styling used with bootstrap to make header stay fixed with scroll-->
+        <nav class="navbar navbar-expand-sm bg-white navbar-dark sticky-top">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo2.png" width="55" height="55" alt="">
+            </a>
+    
+            <div class="menubar" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+              </div>
+        </nav>
+        <div class="bg-image" 
+         style="background-image: url('images/background.jpg');
+                height: 100vh">
         </div>
-    </div>
-
-    <div class="fixedbgd"></div>
+        <!--container used with bootstrap to span width to fullpage as adjusted-->
+       
+        <div class="container">
+                <!-- the div that controls the main portion of the page and its information at the bottom -->
     <div class="main">
-      <div class="title"><h1> Associate Login</h1></div>
-      <div class="directions"><p>Please enter your username and password below.</p></div>
-      <div class="entry">
-        <form>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username"><br>
-            <label for="password">Password:</label>
-            <input type="text" id="password" name="password"><br>
-        </form>
-        <a href="forgotpassword.html">Forgot Password</a>
-        <form><input type="submit"></form>
-    </div>
-
-    <div class="pic"><img src="./images/book2.jpg"></div>
-
-    </div>
-
+        <div class="login"><h2>Login Form</h2></div>
+        <div class="size">
+            
+    
+            <form action="/action_page.php" method="post">
+              
+              <div class="logincontainer">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+            
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                    
+                <button type="submit">Login</button>
+                <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+              </div>
+            
+              <div class="logincontainer" style="background-color:#f1f1f1">
+                <button type="button" class="Registerbtn">Register</button>
+              </div>
+            </form>
+            </div>
+    
+        </div>
+       
+    
     <script>
-        //changes the menu bar to an X
-        function myFunction(x) {
-          x.classList.toggle("change");
-        }
-
-        // When the user scrolls the page, execute myFunction 
-        window.onscroll = function() {headerFunction()};
-
-        // Get the header
-        var header = document.getElementById("myHeader");
-
-        // Get the offset position of the navbar
-        var sticky = header.offsetTop;
-
-        // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-        function headerFunction() {
-        if (window.pageYOffset > sticky) {
-            header.classList.add("sticky");
-        } else {
-            header.classList.remove("sticky"); 
-        }
-        }
-     </script>
-  
-
-
-
-  
-</body>
-</html>
+        function myFunction(x) { x.classList.toggle("change");}
+    </script>
+        
+    </body>
+    </html>
